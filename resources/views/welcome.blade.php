@@ -42,16 +42,4 @@
             </div>
         </div>
     </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
 </html>
-=======
-</html>
-<<<<<<< HEAD
->>>>>>> parent of 234f3a6... Auth + Table Users
-=======
->>>>>>> parent of 234f3a6... Auth + Table Users
-=======
-</html>
-</html>
->>>>>>> parent of 77489f8... Test Gallerie Photo 1
