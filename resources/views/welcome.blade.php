@@ -46,4 +46,7 @@
 </html>
 =======
 </html>
+<<<<<<< HEAD
+>>>>>>> parent of 234f3a6... Auth + Table Users
+=======
 >>>>>>> parent of 234f3a6... Auth + Table Users

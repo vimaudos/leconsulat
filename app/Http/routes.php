@@ -18,6 +18,7 @@
 /*Route::get('/', function () {
     return view('welcome');
 <<<<<<< HEAD
+<<<<<<< HEAD
 });*/
 
 Route::get('/', array(
@@ -67,6 +68,9 @@ Route::get('/deleteimage/{id}', array(
     'as' => 'delete_image',
     'uses' => 'ImagesController@getDelete'
 ));
+=======
+});
+>>>>>>> parent of 234f3a6... Auth + Table Users
 =======
 });
 >>>>>>> parent of 234f3a6... Auth + Table Users
