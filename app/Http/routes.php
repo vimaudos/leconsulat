@@ -23,8 +23,9 @@ Route::get('/', function () {
 /*
  * Backoffice
  */
-Route::resource('user', 'UserController');
 
 Route::auth();
-
+Route::resource('user', 'UserController');
 Route::get('/home', 'HomeController@index');
+Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
+Route::get('post/tag/{tag}', 'PostController@indexTag');
