@@ -6,6 +6,10 @@ use App\Repositories\PostRepository;
 use App\Repositories\TagRepository;
 use App\Http\Requests\PostRequest;
 
+use App;
+
+use Session;
+
 class PostController extends Controller
 {
 
@@ -23,6 +27,10 @@ class PostController extends Controller
 
 	public function index()
 	{
+        $langue = App::getLocale();
+        echo $langue;
+        echo Session::get('locale');
+        
 		$posts = $this->postRepository->getWithUserAndTagsPaginate($this->nbrPerPage);
 		$links = $posts->render();
 
