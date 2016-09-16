@@ -19,7 +19,7 @@ class TagTranslationTableSeeder extends Seeder {
 			$date = $this->randDate();
 			DB::table('tag_translations')->insert(array(
                     'tag_id' => $i,
-					'tag' => 'tag' . $i .' fr',
+					'tag' => 'tag' . $i .' en ',
                     'locale' => 'en',
 				));
 		}
