@@ -14,16 +14,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="../backoffice/css/style.css" />
+    
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -51,48 +44,46 @@
                     @if (!Auth::guest())
                         <!-- Droit Utilisateur -->
                         @if (Auth::user()->admin == 1)
-                        <li><a href="{{ url('/user') }}">Utilisateurs</a></li>
+                        <li><a href="{{ url('/user') }}">{{ trans('backoffice.utilisateurs') }}</a></li>
+                        <li><a href="{{ url('/slide') }}">{{ trans('backoffice.slides') }}</a></li>
                         @endif
-                        <li><a href="{{ url('/post/') }}">Articles</a></li>
+                        <li><a href="{{ url('/post/') }}">{{ trans('backoffice.articles') }}</a></li>
                     @endif
                     
                 </ul>
                 
-                
-                
-
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     
                     <li class="dropdown hover-line language-switcher">
 						@if(session('locale') == 'en')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-uk" src="assets/images/flags/flag-uk.png">
+                                <img alt="flag-uk" src="/assets/images/flags/flag-uk.png">
                                 English
                             </a>
                         @elseif(session('locale') == 'fr')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-fr" src="assets/images/flags/flag-fr.png">
+                                <img alt="flag-fr" src="/assets/images/flags/flag-fr.png">
                                 Français
                             </a>
                         @elseif(session('locale') == 'es')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-es" src="assets/images/flags/flag-es.png">
+                                <img alt="flag-es" src="/assets/images/flags/flag-es.png">
                                 Español
                             </a>
                         @elseif(session('locale') == 'pt')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-br" src="assets/images/flags/flag-br.png">
+                                <img alt="flag-br" src="/assets/images/flags/flag-br.png">
                                 Português
                             </a>
                         @elseif(session('locale') == 'de')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-de" src="assets/images/flags/flag-de.png">
+                                <img alt="flag-de" src="/assets/images/flags/flag-de.png">
                                 Deutsch
                             </a>
                         @elseif(session('locale') == 'it')
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <img alt="flag-it" src="assets/images/flags/flag-it.png">
+                                <img alt="flag-it" src="/assets/images/flags/flag-it.png">
                                 Italiano
                             </a>
                         @endif
@@ -104,7 +95,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/en') }}">
-									<img alt="flag-uk" src="assets/images/flags/flag-uk.png">
+									<img alt="flag-uk" src="/assets/images/flags/flag-uk.png">
 									English
 								</a>
 							</li>
@@ -115,7 +106,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/de') }}">
-									<img alt="flag-de" src="assets/images/flags/flag-de.png">
+									<img alt="flag-de" src="/assets/images/flags/flag-de.png">
 									Deutsch
 								</a>
 							</li>
@@ -126,7 +117,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/fr') }}">
-									<img alt="flag-fr" src="assets/images/flags/flag-fr.png">
+									<img alt="flag-fr" src="/assets/images/flags/flag-fr.png">
 									Français
 								</a>
 							</li>
@@ -137,7 +128,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/pt') }}">
-									<img alt="flag-br" src="assets/images/flags/flag-br.png">
+									<img alt="flag-br" src="/assets/images/flags/flag-br.png">
 									Português
 								</a>
 							</li>
@@ -148,7 +139,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/es') }}">
-									<img alt="flag-es" src="assets/images/flags/flag-es.png">
+									<img alt="flag-es" src="/assets/images/flags/flag-es.png">
 									Español
 								</a>
 							</li>
@@ -159,7 +150,7 @@
                             <li>
                         @endif
 								<a href="{{ url('/langue/it') }}">
-									<img alt="flag-it" src="assets/images/flags/flag-it.png">
+									<img alt="flag-it" src="/assets/images/flags/flag-it.png">
 									Italiano
 								</a>
 							</li>

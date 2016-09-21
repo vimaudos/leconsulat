@@ -27,8 +27,9 @@ Route::get('/', function () {
 Route::auth();
 Route::resource('user', 'UserController');
 Route::get('/home', 'HomeController@index');
-Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
+Route::resource('post', 'PostController');
 Route::get('post/tag/{tag}', 'PostController@indexTag');
+Route::resource('slide', 'SlideController');
 
 
 

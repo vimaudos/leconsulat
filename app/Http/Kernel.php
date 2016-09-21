@@ -15,7 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \App\Http\Middleware\ChangeLocale::class,
+        \App\Http\Middleware\Locale::class,
     ];
 
     /**
@@ -51,5 +51,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin' => \App\Http\Middleware\Admin::class,
+        'locale' => \App\Http\Middleware\Locale::class,
     ];
 }
