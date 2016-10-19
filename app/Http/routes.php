@@ -15,9 +15,52 @@
 /*
  * Site Le Consulat
  */
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [
+    'as' => 'site.index',
+    'uses' => 'SiteController@index'
+]);
+
+Route::get('/galerie', [
+    'as' => 'site.galerie',
+    'uses' => 'SiteController@galerie'
+]);
+
+Route::get('/reservation', [
+    'as' => 'site.reservation',
+    'uses' => 'SiteController@reservation'
+]);
+
+Route::get('/concept', [
+    'as' => 'site.concept',
+    'uses' => 'SiteController@concept'
+]);
+
+Route::get('/services', [
+    'as' => 'site.services',
+    'uses' => 'SiteController@services'
+]);
+
+Route::get('/evenements', [
+    'as' => 'site.evenements',
+    'uses' => 'SiteController@evenements'
+]);
+
+Route::get('/faq', [
+    'as' => 'site.faq',
+    'uses' => 'SiteController@faq'
+]);
+
+Route::get('/mentions-legales', [
+    'as' => 'site.mentions-legales',
+    'uses' => 'SiteController@mentionsLegales'
+]);
+
+Route::get('/plan-du-site', [
+    'as' => 'site.plan-du-site',
+    'uses' => 'SiteController@planSite'
+]);
 
 
 /*
@@ -27,5 +70,11 @@ Route::get('/', function () {
 Route::auth();
 Route::resource('user', 'UserController');
 Route::get('/home', 'HomeController@index');
-Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
+Route::resource('post', 'PostController');
 Route::get('post/tag/{tag}', 'PostController@indexTag');
+Route::resource('slide', 'SlideController');
+
+/*
+ * Langue
+ */
+Route::get('langue/{langue}', 'LangueController@index');

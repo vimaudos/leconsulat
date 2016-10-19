@@ -16,16 +16,18 @@ class TagRepository
 
 	public function store($post, $tags)
 	{
-		$tags = explode(',', $tags);
+		
 
 		foreach ($tags as $tag) {
 
 			$tag = trim($tag);
-
+                        
 			$tag_url = Str::slug($tag);
-
-			$tag_ref = $this->tag->where('tag_url', $tag_url)->first();
-
+                        
+			$tag_ref = $this->tag->whereTranslation('tag_url', $tag_url)->first();
+            
+           
+            
 			if(is_null($tag_ref)) 
 			{
 				$tag_ref = new $this->tag([

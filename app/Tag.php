@@ -9,7 +9,7 @@ class Tag extends Eloquent
 {
     use Translatable;
     
-    public $translatedAttributes = ['tag'];
+    public $translatedAttributes = ['tag','tag_url'];
     
     protected $fillable = ['tag','tag_url'];
     

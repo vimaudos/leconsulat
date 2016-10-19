@@ -1,0 +1,520 @@
+/*------------ Taille portrait iPhone 6 Plus -------------*/
+
+@media screen and (max-width: 767px){
+    
+    html,
+    body{
+        width: 100%;
+    }
+    
+    .container{
+        width: 100%;
+    }
+
+    #backTop,
+    #contact,
+    #align,
+    #navHome,
+    #nav,
+    #carousel,
+    #contactUs > h2,
+    #reser .btn,
+    #reser img{
+        display: none;
+    }
+    
+    h2{
+        text-align: center;
+    }
+    
+    .row{
+        margin: 30px 0;
+        width: 100%;
+    }
+    
+    .cols-4{
+        width: auto;
+        height: auto;
+        text-align: center;
+    }
+    
+    .flex-row-center{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .padding-70{
+        padding: 20px 0px;
+    }
+    
+    h2.black{
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+    
+    .uppercase-black{
+        margin: 20px 0 10px 0;
+    }
+    
+    span.bees{
+        color: #E73F34;
+        font-size: 1em;
+        letter-spacing: 0.3em;
+    }
+    
+    #contactPage{
+        width: 100%;
+        margin-top: 56px;
+    }
+    
+    #contactPage form input[type="submit"]{
+        border-radius: 0;
+    }
+    
+    #validNl p{
+        text-align: center;
+    }
+    
+    /*----------- header -----------*/
+    
+    
+    #header{
+        width: 100%;
+        height: 200px;
+        padding: 0;
+        margin-top: 56px;
+    }
+    
+    #slgContainer{
+        margin-top: 90px;
+        text-align: center;
+    }
+    
+    .nav-fixed{
+        box-shadow: 0 0 0 0 rgba(255,255,255,1);
+    }
+    
+    /*----------- nav responsive -----------*/
+   
+     #menuBurger{
+        display: block;
+        color: #46464A;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+    
+    #nav-icon {
+      position: relative;
+      width: 30px;
+      height: 30px;
+    }
+
+    #nav-icon > div {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 25px;
+      background: #46464A;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+    }
+
+    #nav-icon div:nth-child(1) {
+      top: 0px;
+    }
+
+    #nav-icon div:nth-child(2) {
+      top: 8px;
+    }
+
+    #nav-icon div:nth-child(3) {
+      top: 16px;
+    }
+
+    #nav-icon.open div:nth-child(2) {
+      opacity: 0;
+      left: -50px;
+      transition: .4s ease-in-out;
+    }
+
+    #nav-icon.open div:nth-child(1) {
+      top: 8px;
+      transform: rotate(135deg);
+    }
+
+    #nav-icon.open div:nth-child(3) {
+      top: 8px;
+      transform: rotate(-135deg);
+    }
+    
+    #menuResp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(0,0,0,.8);
+    }
+    
+    #navResponsive{
+        display: block;
+        width: 100%;
+        z-index: 10000;
+    }
+    
+    #navResponsive a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    #navResponsive ul:first-child{
+        color: white;
+        display: inline-block;
+    }
+    
+    #navResponsive ul:first-child li:first-child{
+        width: auto;
+        padding: 15px 15px;
+    }
+    
+    #navResponsive ul:first-child li:first-child{
+        font-size: 1.4em;
+    }
+    
+    #navResponsive ul:last-child{
+        display: none;
+        text-align: center;
+    }
+    
+    #navResponsive ul:last-child a{
+        display: block;
+        padding: 5px;
+        font-weight: 300;
+    }
+    
+    .label-link-filtre{
+        background-color: #E73F34;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .link-filtre{
+        
+    }
+    
+    /*----------- home -----------*/
+    
+    /*--------Réservation---------*/
+    #reser{
+        padding: 0px;
+    }
+    
+    #reser h2{
+        background-color: #E73F34;
+        color: #FFFFFF;
+        width: 100%;
+        font-size:25px;
+        margin: 0;
+    }
+    
+    #reser .col-1-3 h3{
+       padding-bottom: 70px;
+        padding-top: 70px;
+    }
+    
+    #reser #chambre{
+        background-image: url('../image/reservation/album-img-1.png');
+        background-position: center center;
+    }
+    
+    #reser #suite{
+        background-image: url('../image/reservation/album-img-2.png');
+        background-position: center center;
+    }
+    
+    #reser #luxe{
+        background-image: url('../image/reservation/album-img-3.png');
+        background-position: center center;
+    }
+    
+    /*--------Concept---------*/
+    #concept .col-2-3, 
+    #evenements .col-2-3,
+    #concept .col-1-3, 
+    #evenements .col-1-3{
+        height: 396px;
+    }
+    
+    #concept h2,
+    #evenements h2{
+        margin-top: 0px;
+        font-size:25px;
+    }
+    
+    #concept .col-2-3_2,
+    #evenements .col-2-3_2{
+        padding-left: 20px;
+        width: calc(200% / 3 - 20px);
+        
+    }
+    
+    #concept .col_page .container h3, 
+    #evenements .col_page .container h3 {
+        font-size: 20px;
+        
+    }
+    
+    /*--------Services---------*/
+    #services .col-1-3{
+        width: 100%;        
+    }
+    
+    #services h2{
+        font-size:25px;
+        margin-bottom: 0px;
+    }
+    
+    /*--------Contact---------*/
+    #contactUs .col-2-3,
+    #contactUs .col-1-3,
+    #contactUs .col-2-3_2{
+        display: none;
+    }
+    
+    #contactUs .col_page {
+        position: relative;
+        height: auto;
+    }
+    
+    #contactUs .padding-70 {
+        padding: 0;
+    }
+    
+    #contactUs .col_page .container .col-1-3_2{
+        width: 100%;
+        text-align: center;
+    }
+    
+    #contactUs .col_page .container .col-1-3_2 img {
+        width: 30%;
+        margin-top: 20px;
+    }
+    
+    #contactUs .col_page .container .col-1-3_2 li#adresse {
+        color: #E73F34;
+    }
+    
+    #contactUs #plan{
+        display: block;
+        width: 100%;
+    }
+    
+    #contactUs #plan img{
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    
+    #containerTop{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 40px;
+        width: auto;
+    }
+        
+    #newsletter form#formNewsletter{
+        margin: 10px;
+    }
+    
+    #newsletter form#formNewsletter h2{
+        margin: 0;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    #erreurFormNl{
+        left: 77px;
+        right: auto;
+        top: 82px;
+        padding: 6px 8px 5px 8px;
+    }
+    
+    
+    
+    
+    
+    
+        
+    
+    #growUp div.flex-row-center{
+        display: inline-block;
+    }
+    
+    #reser p{
+        padding: 10px 20px;
+    }
+    
+    
+    
+    /*----------- plan de site -----------*/
+    
+    #containerPlan div.link-plan-site{
+        width: calc(100% - 20px);
+        align-items: flex-start;
+    }
+    
+    .link-plan-site div:last-child{
+        margin: 0 10px 10px 10px;
+    }
+    
+    /*----------- acordeon -----------*/
+    
+    #acordeon{
+        margin: 10px;
+    }
+    
+    #acordeon{
+        width: 100%;
+    }
+    
+    /*----------- action -----------*/
+    
+    
+    #action{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 250px;
+        font-size: 1.1em;
+        z-index: 500;
+    }
+    
+    .action-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        display: none;
+    }
+    
+    #action ul{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 250px;
+       
+    }
+    
+    #action ul li:first-child{
+        padding: 5px;
+        background-color: #E73F34;
+        border-radius: 3px 3px 0 0;
+        color: white;
+    }
+    
+    #action p{
+        font-size: .8em;
+        color: #E73F34;
+        width: calc(100% - 10px);
+        padding: 5px;
+        font-weight: 300;
+        color: #BDC3C7;
+    }
+    
+    #action ul,
+    #action p{
+        background-color: white;
+        border-radius: 3px;
+    }
+    
+    #action a{
+        color: black;
+        text-decoration: none;
+        padding: 5px;
+        display: block;
+    }
+    
+    .btn-act{
+        width: 60px;
+        height: 60px;
+        background-color: #E73F34;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+    
+    .btn-act i{
+        color: white;
+    }
+    
+    .btn-act,
+    #action p,
+    #action ul{
+        -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
+    }
+    
+    #action .link-filtre{
+        
+    }
+    
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .container{
+        width: 750px;
+    }
+    
+    .col-1-3,
+    .col-1-3_2{
+        width: calc(50% - 125px); 
+    }
+    .col-2-3,
+    .col-2-3_2{
+        width: calc(50% + 125px);
+    }
+    
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    .container{
+        width: 960px;
+    }
+    
+    .col-1-3,
+    .col-1-3_2{
+        width: calc(50% - 160px); 
+    }
+    .col-2-3,
+    .col-2-3_2{
+        width: calc(50% + 160px);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .container{
+        width:1170px;
+    }
+    
+    .col-1-3,
+    .col-1-3_2{
+        width: calc(50% - 195px); 
+    }
+    .col-2-3,
+    .col-2-3_2{
+        width: calc(50% + 195px);
+    }
+}
+

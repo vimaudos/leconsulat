@@ -18,14 +18,14 @@ class PostTableSeeder extends Seeder {
         {
             $date = $this->randDate();
             DB::table('posts')->insert([ 
-                'image' => 'images' . $i,
+                'image' => 'uploads/cN8ipseLG5.png',
                 'user_id' => rand(1, 10),
                 'created_at' => $date,
                 'updated_at' => $date
             ]);
 
         }
-
+        
     }
 
 }

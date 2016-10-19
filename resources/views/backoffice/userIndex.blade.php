@@ -2,11 +2,11 @@
 
 @section('content')
     <br>
-    <div class="col-sm-offset-4 col-sm-4">
+    <div class="container">
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
-		<div class="panel panel-primary">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Liste des utilisateurs</h3>
 			</div>
@@ -15,7 +15,9 @@
 					<tr>
 						<th>#</th>
 						<th>Nom</th>
-						<th></th>
+						<th>Email</th>
+                        <th>Admin</th>
+                        <th></th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -25,6 +27,16 @@
 						<tr>
 							<td>{!! $user->id !!}</td>
 							<td class="text-primary"><strong>{!! $user->name !!}</strong></td>
+                            <td class="text-primary">{!! $user->email !!}</td>
+                            <td class="text-primary">
+                                
+                                @if($user->admin==1)
+                                    Oui
+                                @else
+                                    Non
+                                @endif
+                            
+                            </td>
 							<td>{!! link_to_route('user.show', 'Voir', [$user->id], ['class' => 'btn btn-success btn-block']) !!}</td>
 							<td>{!! link_to_route('user.edit', 'Modifier', [$user->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
 							<td>

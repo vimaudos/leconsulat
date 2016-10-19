@@ -1,0 +1,277 @@
+#headerHome,
+#header{
+    z-index: 1000;
+}
+
+/*------------- MENU DE NAV --------------*/
+
+#navHome,
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 20;
+}
+
+#navHome div,
+#nav div{
+    width: calc(100%/3);
+    margin: auto;
+}
+
+#navHome > div:first-child,
+#navHome > div:last-child,
+#nav > div:first-child,
+#nav > div:last-child{
+    
+}
+
+.nav-fixed{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+#menu1 ul{
+    display: flex;
+    justify-content:space-around;
+}
+
+#menu2 ul{
+    display: flex;
+    justify-content:space-around;
+    position: relative;
+}
+
+#menu1 li{
+    display: flex;
+    list-style: none;
+}
+
+#menu2 li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+#menu1 a,
+#menu2 a{
+    font-weight: 300;
+    color: #46464A;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 400;
+}
+
+#menu1 li a:hover,
+#menu2 li a:hover{
+    color: white;
+    background-color: #AC2B29;
+    border-radius: 3px;
+}
+
+#reservation{
+    background-color: #E73F34;
+    border-radius: 3px;
+}
+
+#reservation a{
+    color: #ffffff;
+}
+
+
+
+#nomAgence{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 3.2em;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+#nomAgence2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 3.2em;
+    letter-spacing: 0.3em;
+}
+
+#nomAgence2 a{
+    text-decoration: none;
+}
+
+#nomAgence a{
+    text-decoration: none;
+    color: black;
+    /*text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);*/
+}
+
+.yellow{
+    color: #E73F34;
+    font-weight: 900;
+}
+
+.nomAgence-color{
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+    color: white;
+    font-size: .6em;
+}
+
+.nomagenceNav{
+    font-size: 2.2em;
+    color: white;
+}
+
+#menu2 img{
+    height: 8px;
+    margin-left: 10px;
+}
+
+#menu2 ul.menu-niv2 img{
+    height: 13px;
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+/*----------------- Newsletter ------------------*/
+
+#mc-embedded-subscribe-form{
+    text-align: center;
+}
+
+#newsletter form div{
+    position: relative;
+}
+
+#newsletter form h2{
+    font-weight: 300;
+    color: white;
+    margin: 0 10px;
+}
+
+#newsletter form input[type="email"]{
+    padding: 10px;
+	font-size: .8em;
+	font-weight: 300;
+    border: none;
+    border-radius: 3px 0 0 3px;
+	outline: none;
+    transition: .3s; 
+}
+
+#newsletter form input[type="submit"]{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #E73F34;
+    color: white;
+    font-size: .8em;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+#newsletter form input:last-child:hover{
+    background-color: #FFB600;
+}
+
+#validNl h2{
+    padding: 20px;
+}
+
+#validNl p{
+    color:#919191;
+    padding: 10px;
+}
+
+#erreurFormNl{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: .8em;
+    font-weight: 300;
+    top: 0;
+    right: -180px;
+    padding: 8px 10px 7px 10px;
+    background-color: firebrick;
+    color: white;
+    border-radius: 3px;
+    transition: .3s;
+    opacity: 0;
+}
+
+#erreurFormNl i{
+    font-size: 1.6em;
+    margin-right: 10px;
+}
+
+/*----------------- FOOTER ------------------*/
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+footer{
+    width: 100%;
+    background-color: #46464a;
+}
+
+footer a{
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #BDC3C7;
+}
+
+footer li{
+    list-style: none;
+    font-weight: 300;
+    color: white;
+}
+
+footer img{
+    width: 20px;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 100px;
+}
+
+
+.links-footer ul li:first-child,
+.links-footer ul li:first-child a{
+    color: #E73F34;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-bottom: 27px;
+}
+
+footer .links-footer.text-right img{
+    margin-left: 15px;
+}

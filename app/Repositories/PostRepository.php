@@ -2,8 +2,8 @@
 
 use App\Post;
 
-class PostRepository {
-
+class PostRepository
+{
     protected $post;
 
     public function __construct(Post $post)
@@ -31,16 +31,34 @@ class PostRepository {
 		})->paginate($n);
 	}
 
-	public function store($inputs)
+	public function storePost($inputs,$url)
 	{
-		return $this->post->create($inputs);
+        //dd($inputs);
+        
+        $data = [
+            'image' => $url,
+            'user_id' => $inputs['user_id'],
+            'fr'  => ['titre' => $inputs['titre_fr'],'contenu' => $inputs['contenu_fr']],
+            'en'  => ['titre' => $inputs['titre_en'],'contenu' => $inputs['contenu_en']],
+            'es'  => ['titre' => $inputs['titre_es'],'contenu' => $inputs['contenu_es']],
+            'pt'  => ['titre' => $inputs['titre_pt'],'contenu' => $inputs['contenu_pt']],
+            'it'  => ['titre' => $inputs['titre_it'],'contenu' => $inputs['contenu_it']],
+            'de'  => ['titre' => $inputs['titre_de'],'contenu' => $inputs['contenu_de']],
+          ];
+        
+		return $this->post->create($data);
 	}
 
-	public function destroy($id)
+	public function destroyPost($id)
 	{
 		$post = $this->post->findOrFail($id);
 		$post->tags()->detach();
 		$post->delete();
+	}
+    
+    public function getById($id)
+	{
+		return $this->post->findOrFail($id);
 	}
 
 }
