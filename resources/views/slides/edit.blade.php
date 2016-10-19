@@ -48,7 +48,7 @@
                             <div role="tabpanel" class="tab-pane" id="en">
                                 <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
                                     <label for="titre_en">{{trans('backoffice.titre_en')}}</label>
-                                    {!! Form::text('titre_en', $slide->translate('fr')->titre, ['class' => 'form-control']) !!}
+                                    {!! Form::text('titre_en', $slide->translate('en')->titre, ['class' => 'form-control']) !!}
                                     {!! $errors->first('titre_en', '<small class="help-block">:message</small>') !!}
                                 </div>
 
@@ -56,7 +56,7 @@
                             <div role="tabpanel" class="tab-pane" id="es">
                                 <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
                                     <label for="titre_es">{{trans('backoffice.titre_es')}}</label>
-                                    {!! Form::text('titre_es', $slide->translate('fr')->titre, ['class' => 'form-control']) !!}
+                                    {!! Form::text('titre_es', $slide->translate('es')->titre, ['class' => 'form-control']) !!}
                                     {!! $errors->first('titre_es', '<small class="help-block">:message</small>') !!}
                                 </div>
 
@@ -64,7 +64,7 @@
                             <div role="tabpanel" class="tab-pane" id="pt">
                                 <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
                                     <label for="titre_pt">{{trans('backoffice.titre_pt')}}</label>
-                                    {!! Form::text('titre_pt', $slide->translate('fr')->titre, ['class' => 'form-control']) !!}
+                                    {!! Form::text('titre_pt', $slide->translate('pt')->titre, ['class' => 'form-control']) !!}
                                     {!! $errors->first('titre_pt', '<small class="help-block">:message</small>') !!}
                                 </div>
 
@@ -72,7 +72,7 @@
                             <div role="tabpanel" class="tab-pane" id="de">
                                 <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
                                     <label for="titre_de">{{trans('backoffice.titre_de')}}</label>
-                                    {!! Form::text('titre_de', $slide->translate('fr')->titre, ['class' => 'form-control']) !!}
+                                    {!! Form::text('titre_de', $slide->translate('de')->titre, ['class' => 'form-control']) !!}
                                     {!! $errors->first('titre_de', '<small class="help-block">:message</small>') !!}
                                 </div>
 
@@ -80,7 +80,7 @@
                             <div role="tabpanel" class="tab-pane" id="it">
                                 <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
                                     <label for="titre_it">{{trans('backoffice.titre_it')}}</label>
-                                    {!! Form::text('titre_it', $slide->translate('fr')->titre, ['class' => 'form-control']) !!}
+                                    {!! Form::text('titre_it', $slide->translate('it')->titre, ['class' => 'form-control']) !!}
                                     {!! $errors->first('titre_it', '<small class="help-block">:message</small>') !!}
                                 </div>
 
@@ -97,6 +97,14 @@
                                     <label for="image">{{trans('backoffice.image')}}</label>
                                     {!! Form::file('image', ['class' => 'form-control']) !!}
                                     {!! $errors->first('image', '<small class="help-block">:message</small>') !!}
+                                </div>
+                                <div class="form-group {!! $errors->has('priorite') ? 'has-error' : '' !!}">
+                                    <label for="priorite">{{trans('backoffice.priorite')}}</label>
+                                    {!! Form::text('priorite', $slide->priorite, ['class' => 'form-control']) !!}
+                                    {!! $errors->first('priorite', '<small class="help-block">:message</small>') !!}
+                                </div>
+                                <div class="form-group {!! $errors->has('priorite') ? 'has-error' : '' !!}">
+                                    {!! Form::checkbox('active', 1, $slide->active) !!}Activé ?
                                 </div>
                             </div>
                         </div>

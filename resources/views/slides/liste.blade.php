@@ -17,7 +17,8 @@
                             <th>#</th>
                             <th>Image</th>
                             <th>Nom</th>
-                            <th></th>
+                            <th>Priorite</th>
+                            <th>Activé ?</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -28,7 +29,8 @@
                                 <td>{!! $slide->id !!}</td>
                                 <td><img src="/{{ $slide->image }}" width="140" /></td>
                                 <td class="text-primary"><strong>{!! $slide->titre !!}</strong></td>
-                                <td>{!! link_to_route('slide.show', 'Voir', [$slide->id], ['class' => 'btn btn-success btn-block']) !!}</td>
+                                <td>{!! $slide->priorite !!}</td>
+                                <td>{!! $slide->active !!}</td>
                                 <td>{!! link_to_route('slide.edit', 'Modifier', [$slide->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                                 <td>
                                     {!! Form::open(['method' => 'DELETE', 'route' => ['slide.destroy', $slide->id]]) !!}

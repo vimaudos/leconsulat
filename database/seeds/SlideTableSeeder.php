@@ -18,6 +18,7 @@ class SlideTableSeeder extends Seeder {
         {
             $date = $this->randDate();
             DB::table('slides')->insert([ 
+                'priorite' => rand(1, 12),
                 'image' => 'uploads/cN8ipseLG5.png',
                 'created_at' => $date,
                 'updated_at' => $date

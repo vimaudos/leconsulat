@@ -22,6 +22,9 @@ class SlideRepository extends ResourceRepository
         $slide->translate('pt')->titre = $inputs['titre_pt'];
         $slide->translate('it')->titre = $inputs['titre_it'];
         $slide->translate('de')->titre = $inputs['titre_de'];
+         
+        $slide->priorite = $inputs['priorite'];
+        $slide->active = $inputs['active'];
                 
         if($url != NULL){
             $slide->image = $url;    

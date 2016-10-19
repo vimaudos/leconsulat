@@ -15,10 +15,13 @@ class CreateSlidesTable extends Migration
         Schema::create('slides', function(Blueprint $table) {
 
             $table->increments('id');
-            $table->timestamps();
             
             $table->string('image');
+            $table->integer('priorite')->unsigned();
+            $table->boolean('active')->default(true);
             
+            $table->timestamps();
+                        
         });
     }
 

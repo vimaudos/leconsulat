@@ -66,12 +66,17 @@ class SlideController extends Controller
     public function edit($id)
 	{
 		$slide = $this->slideRepository->getById($id);
+        //dd($slide);
 
 		return view('slides.edit',  compact('slide'));
 	}
     
     public function update(Request $request, $id)
     {
+            
+        $this->setActive($request);
+        
+        
         if  ($request->hasFile('image')){
                     
             $image = $request->file('image');
@@ -107,4 +112,12 @@ class SlideController extends Controller
 
         }
     }
+    
+    private function setActive($request)
+	{
+		if(!$request->has('active'))
+		{
+			$request->merge(['active' => 0]);
+		}         
+	}
 }
