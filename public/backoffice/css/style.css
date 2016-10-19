@@ -1,0 +1,30 @@
+body {
+    font-family: 'Lato';
+}
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+.bg-gray-lighter{
+    background-color: rgba(0, 0, 0, 0.065);
+}
+
+.article_images img{
+    float: left;
+}
+
+
+
+
+/*
+ * MARGIN / PADDING
+ */
+
+
+.margin-top-10      {               margin-top: 10px; }
+.margin-bottom-10   {               margin-bottom: 10px; }
+.margin-left-10   {               margin-left: 10px; }
+.margin-right-10   {               margin-right: 10px; }
+.padding-top-10     {               padding-top: 10px; }
+.padding-top-20     {               padding-top: 20px; }

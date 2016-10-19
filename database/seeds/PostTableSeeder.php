@@ -25,7 +25,7 @@ class PostTableSeeder extends Seeder {
             ]);
 
         }
-
+        
     }
 
 }

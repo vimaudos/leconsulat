@@ -24,9 +24,19 @@ class PostRequest extends Request
     public function rules()
 	{
 		return [
-			'titre' => 'required|max:80',
-			'contenu' => 'required',
-            'tags' => ['Regex:/^[A-Za-z0-9-éèàù]{1,50}?(,[A-Za-z0-9-éèàù]{1,50})*$/']
+			'titre_fr' => 'required|max:80',
+			'contenu_fr' => 'required',
+            'titre_en' => 'required|max:80',
+			'contenu_en' => 'required',
+            'titre_es' => 'required|max:80',
+			'contenu_es' => 'required',
+            'titre_pt' => 'required|max:80',
+			'contenu_pt' => 'required',
+            'titre_de' => 'required|max:80',
+			'contenu_de' => 'required',
+            'titre_it' => 'required|max:80',
+			'contenu_it' => 'required',
+            'image' => 'required|image',
 		];
 	}
 }

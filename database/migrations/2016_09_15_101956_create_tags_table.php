@@ -14,7 +14,6 @@ class CreateTagsTable extends Migration {
 
             $table->increments('id');
             $table->timestamps();
-            $table->string('tag_url', 60)->unique();
         });
     }
 
