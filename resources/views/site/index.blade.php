@@ -38,9 +38,113 @@
 			
             
             <div id="filtreBg"></div>
-            <div id="slgContainer" class="flex-row-ard" style="width:100%;">
-                
             
+            <div class="language-switcher">
+               <div class="dropdown hover-line">
+                    @if(session('locale') == 'en')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-uk" src="/assets/images/flags/flag-uk.png">
+                            English
+                        </a>
+                    @elseif(session('locale') == 'fr')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-fr" src="/assets/images/flags/flag-fr.png">
+                            Français
+                        </a>
+                    @elseif(session('locale') == 'es')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-es" src="/assets/images/flags/flag-es.png">
+                            Español
+                        </a>
+                    @elseif(session('locale') == 'pt')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-br" src="/assets/images/flags/flag-br.png">
+                            Português
+                        </a>
+                    @elseif(session('locale') == 'de')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-de" src="/assets/images/flags/flag-de.png">
+                            Deutsch
+                        </a>
+                    @elseif(session('locale') == 'it')
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="flag-it" src="/assets/images/flags/flag-it.png">
+                            Italiano
+                        </a>
+                    @endif
+
+                    <ul class="dropdown-menu languages">
+                    @if (session('langue') == 'en')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/en') }}">
+                                <img alt="flag-uk" src="/assets/images/flags/flag-uk.png">
+                                English
+                            </a>
+                        </li>
+
+                        @if (session('locale') == 'de')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/de') }}">
+                                <img alt="flag-de" src="/assets/images/flags/flag-de.png">
+                                Deutsch
+                            </a>
+                        </li>
+
+                    @if (session('locale') == 'fr')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/fr') }}">
+                                <img alt="flag-fr" src="/assets/images/flags/flag-fr.png">
+                                Français
+                            </a>
+                        </li>
+
+                    @if (session('locale') == 'pt')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/pt') }}">
+                                <img alt="flag-br" src="/assets/images/flags/flag-br.png">
+                                Português
+                            </a>
+                        </li>
+
+                    @if (session('locale') == 'es')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/es') }}">
+                                <img alt="flag-es" src="/assets/images/flags/flag-es.png">
+                                Español
+                            </a>
+                        </li>
+
+                    @if (session('locale') == 'it')
+                        <li class="active">
+                    @else
+                        <li>
+                    @endif
+                            <a href="{{ url('/langue/it') }}">
+                                <img alt="flag-it" src="/assets/images/flags/flag-it.png">
+                                Italiano
+                            </a>
+                        </li>
+                    </ul>
+				</div>
+             
+            </div>
+            
+            <div id="slgContainer" class="flex-row-ard" style="width:100%;">          
                 <div id="align">
                     <div id="logo2">
                         <img id="hotel" src="/site/image/hotel.png" alt="hexagone noir"/>
@@ -129,21 +233,15 @@
                                 if ($i != 0){
                                   echo 'style="display: none;"';  
                                 }
-                                 ?>
+                              ?>
                               
-                              >
-                               
-                               
+                            >
                                
                                 <img data-u="image" src="/{{ $slide->image }}" />
                                 
                                 <div style="background-color:rgba(0,0,0,0.5); width: 100%; height:500px; left: 0;
-    position: absolute;
-    top: 0;">
-                                    
-                                </div>
-                                
-                                
+    position: absolute; top: 0;"> </div>
+                                                              
                                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 500px; font-size: 50px; color: #ffffff; display: table;">
                                    <div style=" text-align: center; display: table-cell; vertical-align: middle; line-height: 60px;">
                                        <div style="text-align: center; display: inline-block;">
@@ -160,8 +258,6 @@
                             ?>
                         
                         @endforeach
-                        
-                        
                         
                     </div>
                     
@@ -259,7 +355,7 @@
                     
                 </div>
                 
-                <div class="col-1-3">
+                <div class="col-1-3" style="background-image: url('/{{ $post->image }}')">
                     
                 </div>
                 
@@ -270,8 +366,8 @@
 
 
                         <div class="col-2-3_2">
-                            <h3>Le Consulat</h3>
-                            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+                            <h3>{{ $post->titre }}</h3>
+                            <p>{{ $post->contenu }}</p>
                         </div>
 
                         <div class="clear"></div>
@@ -428,6 +524,7 @@
            
         </footer>
         
+        <script type="text/javascript" src="/site/js/bootstrap.min.js"></script>
         
         <script type="text/javascript" src="/site/script/script-home.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>

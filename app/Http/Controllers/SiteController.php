@@ -6,9 +6,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 
 use App\Slide;
+use App\Post;
 
 class SiteController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('locale');
+    }
     /*
      *
      */
@@ -19,7 +25,10 @@ class SiteController extends Controller
             ->orderBy('priorite', 'asc')
             ->get();
         
-		return view('site.index',compact('slides'));
+        $post = Post::orderBy('id','desc')
+            ->first();
+                
+		return view('site.index',compact('slides','post'));
 	}
     
     public function galerie()
