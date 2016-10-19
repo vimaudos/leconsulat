@@ -221,6 +221,10 @@
         margin: 0;
     }
     
+    #reser .col-1-3{
+        width: calc(100%/3);
+    }
+    
     #reser .col-1-3 h3{
        padding-bottom: 70px;
         padding-top: 70px;
@@ -242,6 +246,17 @@
     }
     
     /*--------Concept---------*/
+    
+    #concept .col-2-3, 
+    #evenements .col-2-3{
+         width: calc(200% / 3);
+    }
+    #concept .col-1-3, 
+    #evenements .col-1-3{
+         width: calc(100% / 3);
+    }
+    
+    
     #concept .col-2-3, 
     #evenements .col-2-3,
     #concept .col-1-3, 
