@@ -40,6 +40,10 @@ return [
     'titre_it' => 'Titre (Italien)',
     'contenu_it' => 'Contenu (Italien)',
     'image' => 'Photo',
+    'slides' => 'Slides',
+    'galerie' => 'Galerie',
+    'album1' => 'Photos pro',
+    'album2' => 'Photos clients',
     
 
 ];

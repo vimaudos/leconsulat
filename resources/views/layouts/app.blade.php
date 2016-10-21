@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     
-    <link rel="stylesheet" href="../backoffice/css/style.css" />
+    <link rel="stylesheet" href="/backoffice/css/style.css" />
+    
+    @yield('head')
     
 </head>
 <body id="app-layout">
@@ -33,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    Laravel
+                    <img src="/backoffice/images/logo.png" alt="" title="" >
                 </a>
             </div>
 
@@ -44,10 +46,36 @@
                     @if (!Auth::guest())
                         <!-- Droit Utilisateur -->
                         @if (Auth::user()->admin == 1)
-                        <li><a href="{{ url('/user') }}">{{ trans('backoffice.utilisateurs') }}</a></li>
-                        <li><a href="{{ url('/slide') }}">{{ trans('backoffice.slides') }}</a></li>
+                        <li><a href="{{ url('/user') }}">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  
+                            {{ trans('backoffice.utilisateurs') }}
+                        </a></li>
+                        <li><a href="{{ url('/slide') }}">
+                            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>  {{ trans('backoffice.slides') }}
+                        </a></li>   
+                                             
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>  {{ trans('backoffice.galerie') }} <span class="caret"></span>
+                            </a>
+                            
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/gallery/album1') }}">{{ trans('backoffice.ajouter') }}</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/gallery/album1') }}">{{ trans('backoffice.album1') }}</a></li>
+                                    <li><a href="{{ url('/gallery/album2') }}">{{ trans('backoffice.album2') }}</a></li>
+                                </ul>
+                                </li>
+                                <li><a href="{{ url('/gallery/album2') }}">{{ trans('backoffice.album2') }}</a></li>
+                            </ul>
+                            
+                            
+                        </li>
+                        
+                        
                         @endif
-                        <li><a href="{{ url('/post/') }}">{{ trans('backoffice.articles') }}</a></li>
+                        <li><a href="{{ url('/post/') }}">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  {{ trans('backoffice.articles') }}</a></li>
                     @endif
                     
                 </ul>
@@ -168,6 +196,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li>{!! link_to_route('user.edit', 'Modifier', [Auth::user()->id]) !!}</li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -183,5 +212,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    
+    @yield('footer')
 </body>
 </html>

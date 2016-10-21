@@ -78,3 +78,22 @@ Route::resource('slide', 'SlideController');
  * Langue
  */
 Route::get('langue/{langue}', 'LangueController@index');
+
+
+
+/*
+ * Galerie
+ */
+Route::get('gallery/', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
+Route::get('/gallery/album1', ['as' => 'upload', 'uses' => 'ImageController@getUpload1']);
+Route::get('/gallery/album2', ['as' => 'upload', 'uses' => 'ImageController@getUpload2']);
+
+
+Route::post('gallery/upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
+Route::post('gallery/upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
+
+/**
+ * Part 2 - Display already uploaded images in Dropzone
+ */
+Route::get('gallery/example-2', ['as' => 'upload-2', 'uses' => 'ImageController@getServerImagesPage']);
+Route::get('gallery/server-images', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
