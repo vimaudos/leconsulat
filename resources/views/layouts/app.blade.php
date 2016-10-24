@@ -60,16 +60,10 @@
                             </a>
                             
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/gallery/album1') }}">{{ trans('backoffice.ajouter') }}</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/gallery/album1') }}">{{ trans('backoffice.album1') }}</a></li>
-                                    <li><a href="{{ url('/gallery/album2') }}">{{ trans('backoffice.album2') }}</a></li>
-                                </ul>
-                                </li>
+                                <li><a href="{{ url('/gallery/album1') }}">{{ trans('backoffice.album1') }}</a></li>
                                 <li><a href="{{ url('/gallery/album2') }}">{{ trans('backoffice.album2') }}</a></li>
+                                <li><a href="{{ url('/gallery/') }}">Voir les photos</a></li>
                             </ul>
-                            
-                            
                         </li>
                         
                         

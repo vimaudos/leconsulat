@@ -19,12 +19,7 @@ class ImageController extends Controller
         $this->image = $imageRepository;
         $this->middleware('auth');
     }
-
-    public function getUpload()
-    {
-        return view('gallery.pages.upload');
-    }
-    
+   
     public function getUpload1()
     {
         $gallery = Gallery::find(1);
@@ -64,27 +59,64 @@ class ImageController extends Controller
      * Part 2 - Display already uploaded images in Dropzone
      */
 
-    public function getServerImagesPage()
+
+   public function getServerImagesPage1()
     {
-        return view('gallery.pages.upload-2');
+        $gallery = Gallery::find(1);
+        return view('backoffice.galerie.album1', compact('gallery'));
+    }
+    
+    public function getServerImagesPage2()
+    {
+        $gallery = Gallery::find(2);
+        return view('backoffice.galerie.album2', compact('gallery'));
     }
 
-    public function getServerImages()
+    public function getServerImages1()
     {
-        $images = Image::get(['original_name', 'filename']);
+        $images = Image::select(['id','original_name', 'filename'])
+            ->where('gallery_id','=', '1')
+            ->get();
 
         $imageAnswer = [];
 
         foreach ($images as $image) {
             $imageAnswer[] = [
+                'image_id' => $image->id,
                 'original' => $image->original_name,
                 'server' => $image->filename,
-                'size' => File::size(public_path('images/full_size/' . $image->filename))
+                'size' => File::size(public_path('/images/full_size/' . $image->filename))
             ];
         }
 
         return response()->json([
             'images' => $imageAnswer
         ]);
+    }
+    public function getServerImages2()
+    {
+        $images = Image::select(['id','original_name', 'filename'])
+            ->where('gallery_id','=', '2')
+            ->get();
+
+        $imageAnswer = [];
+
+        foreach ($images as $image) {
+            $imageAnswer[] = [
+                'image_id' => $image->id,
+                'original' => $image->original_name,
+                'server' => $image->filename,
+                'size' => File::size(public_path('/images/full_size/' . $image->filename))
+            ];
+        }
+
+        return response()->json([
+            'images' => $imageAnswer
+        ]);
+    }
+    
+    public function edit(Request $request){
+        dd($request);
+        return view('backoffice.galerie.edit', compact(''));
     }
 }

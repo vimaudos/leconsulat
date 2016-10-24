@@ -17,7 +17,7 @@ Dropzone.options.realDropzone = {
         // Add server images
         var myDropzone = this;
 
-        $.get('/gallery/server-images-1', function(data) {
+        $.get('/gallery/server-images-2', function(data) {
 
             $.each(data.images, function (key, value) {
 

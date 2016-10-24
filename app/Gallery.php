@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Gallery extends Eloquent
 {
+    protected $table = 'galleries';
+    
     use Translatable;
     
     public $translatedAttributes = [];
     
     protected $fillable = ['nom_gallery'];
-    
-    protected $table = 'galleries';
     
     
     /**
@@ -23,5 +23,10 @@ class Gallery extends Eloquent
      */
     // (optionaly)
     // protected $with = ['translations']; 
+    
+    public function gallery_translate() 
+    {
+        return $this->belongsToMany('App\GalleryTranslation');
+    }
     
 }
